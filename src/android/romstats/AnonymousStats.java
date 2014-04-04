@@ -142,13 +142,11 @@ public class AnonymousStats extends PreferenceActivity implements
 		mPrefHolder.setSummary(getResources().getQuantityString(R.plurals.reporting_interval_days, tFrame, tFrame));
 
 		}
-
-		Utilities.checkIconVisibility(this);
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+	public boolean onPreferenceTreeClick(Preference preference) {
 		if (preference == mEnableReporting) {
 			if (mEnableReporting.isChecked()) {
 				// Display the confirmation dialog
