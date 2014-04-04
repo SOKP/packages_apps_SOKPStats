@@ -250,26 +250,6 @@ public class AnonymousStats extends PreferenceActivity implements
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu, menu);
 
-		// remove Uninstall option if RomStats is installed as System App
-		try {
-			PackageManager pm = getPackageManager();
-			ApplicationInfo appInfo = pm.getApplicationInfo(getPackageName(), 0);
-
-			// Log.d(Utilities.TAG, "App is installed in: " +
-			// appInfo.sourceDir);
-			// Log.d(Utilities.TAG, "App is system: " + (appInfo.flags &
-			// ApplicationInfo.FLAG_SYSTEM));
-
-			if ((appInfo.sourceDir.startsWith("/data/app/"))
-					&& (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
-				// installed as user app, ok
-			} else {
-				menu.findItem(R.id.uninstall).setVisible(false);
-			}
-		} catch (Exception e) {
-			menu.findItem(R.id.uninstall).setVisible(false);
-		}
-
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -286,26 +266,6 @@ public class AnonymousStats extends PreferenceActivity implements
 					}
 				}).show();
 			break;
-		case R.id.uninstall:
-			uninstallSelf();
-			break;
-		case R.id.hideicon:
-			DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					switch (which) {
-					case DialogInterface.BUTTON_POSITIVE:
-						// Yes button clicked
-						hideLauncherIcon();
-						dialog.dismiss();
-						break;
-
-					case DialogInterface.BUTTON_NEGATIVE:
-						// No button clicked
-						dialog.dismiss();
-						break;
-					}
-				}
 			};
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -322,12 +282,6 @@ public class AnonymousStats extends PreferenceActivity implements
 		}
 
 		return super.onOptionsItemSelected(item);
-	}
-	
-	public void uninstallSelf() {
-		Intent intent = new Intent(Intent.ACTION_DELETE);
-		intent.setData(Uri.parse("package:" + getPackageName()));
-		startActivity(intent);
 	}
 
 }
