@@ -47,25 +47,11 @@
             android:key="pref_view_stats"
             android:title="@string/view_stats_title" />
         <Preference
-            android:key="pref_last_report_on"
-            android:title="@string/last_report_on" />
-        <Preference
             android:key="pref_reporting_interval"
             android:title="@string/reporting_interval" />
         <Preference
-            android:key="pref_app_signature"
-            android:title="@string/app_signature" />
-    </PreferenceCategory>
-    
-    <PreferenceCategory android:title="@string/pref_info" >
-        <Preference
-            android:key="pref_about"
-            android:summary="@string/pref_info_about"
-            android:title="@string/app_name" />
-        <Preference
-            android:key="pref_website"
-            android:summary="@string/pref_info_website_url"
-            android:title="@string/pref_info_website" />
+            android:key="pref_last_report_on"
+            android:title="@string/last_report_on" />
     </PreferenceCategory>
 
 </PreferenceScreen>

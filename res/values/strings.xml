@@ -53,11 +53,6 @@
         <item quantity="other">%d days</item>
     </plurals>
     <string name="next_report_on">Next report</string>
-    <string name="app_signature">App signature</string>
-    
-    <string name="pref_hideicon">Hide icon from launcher</string>
-    <string name="pref_hideicon_desc">Application launcher icon will be hidden from your App Drawer</string>
-    
     <string name="pref_uninstall">Uninstall</string>
     <string name="btn_yes">Yes</string>
     <string name="btn_no">No</string>
@@ -70,12 +65,5 @@
     <string name="preview_carrier_title">Carrier</string>    
     <string name="preview_romname_title">ROM Name</string>    
     <string name="preview_romversion_title">LiquidSmooth Version</string>
-    
-    <string name="pref_info">About &amp; Support</string>
-    <string name="pref_info_about">About</string>
-    <string name="pref_info_changelog">Change log</string>
-    <string name="pref_info_changelog_desc">Show the change log</string>
-    <string name="pref_info_website">Web site</string>
-    <string name="pref_info_website_url">http://forum.xda-developers.com/showthread.php?t=2087099</string>
 
 </resources>
